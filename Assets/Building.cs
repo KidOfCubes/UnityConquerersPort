@@ -10,6 +10,7 @@ using UnityEngine;
 public class Building : NetworkBehaviour
 {
     public DataHolder data;
+    bool selected = false;
 
 
     [SyncVar]
@@ -17,6 +18,7 @@ public class Building : NetworkBehaviour
     [SyncVar(hook = nameof(OnHealthChanged))]
     public float Health;
     public float MaxHealth;
+    public int BuildingIndex;
     public float Cost;
 
     public float BuildEnemyUnitRange;
@@ -24,6 +26,10 @@ public class Building : NetworkBehaviour
     public float BuildUnitRange;
     public float BuildBuildingRange;
     public float BuildCrystalRange;
+
+    public Building ParentBuilding;
+    public HealthBarScript healthBarScript;
+    GameObject selectCircle;
     // Start is called before the first frame update
     public bool canBuild()
     {
@@ -54,7 +60,7 @@ public class Building : NetworkBehaviour
                 if ((building.transform.position - transform.position).magnitude <= BuildBuildingRange && BuildBuildingRange!=0)
                 {
                     FriendlyRequirements = true;
-                    Debug.Log("CLOSE ENOUGH");
+                    //Debug.Log("CLOSE ENOUGH");
                 }
             }
             else
@@ -125,6 +131,15 @@ public class Building : NetworkBehaviour
             Health = MaxHealth;
             data.ActiveBuildings.Add(gameObject);
         }
+        GameObject tempthing = Instantiate(data.HealthBarPrefab);
+        healthBarScript = tempthing.GetComponent<HealthBarScript>();
+        healthBarScript.MaxHealth = MaxHealth;
+        healthBarScript.Health = Health;
+        healthBarScript.Height = 0.05f;
+        healthBarScript.Width = 0.5f;
+        healthBarScript.UpdateValues();
+        healthBarScript.transform.SetParent(transform, false);
+        healthBarScript.transform.localPosition = new Vector3(0, 0.5f, 0);
     }
     private void OnDisable()
     {
@@ -142,15 +157,51 @@ public class Building : NetworkBehaviour
         }
         data.ActiveBuildings.Remove(gameObject);
     }
+    public bool select(int team)
+    {
+        if (team == Team)
+        {
+            selected = !selected;
+            if (selected)
+            {
+                selectCircle = Instantiate(data.SelectOutlines[0]);
+                selectCircle.transform.parent = transform;
+                selectCircle.transform.localPosition = Vector3.zero;
+            }
+            else
+            {
+                Destroy(selectCircle);
+            }
+            return selected;
+        }
+        else
+        {
+            return false;
+        }
+    }
     private void OnHealthChanged(float oldValue, float newValue)
     {
         if (Health <= 0)
         {
             OnDestroy();
             OnDisable();
+            if (selected)
+            {
+                data.Commander.ClickOnObject(0, gameObject);
+            }
             data.ActiveBuildings.Remove(gameObject);
-            
+            Destroy(healthBarScript.gameObject);
             Destroy(gameObject);
+        }
+        if (healthBarScript != null)
+        {
+            Debug.Log("helt " + Health);
+            healthBarScript.Health = Health;
+            healthBarScript.UpdateValues();
+        }
+        else
+        {
+            Debug.Log("oh no its null");
         }
     }
     // Update is called once per frame

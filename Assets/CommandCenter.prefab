@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2612295308499272600}
-  - component: {fileID: 856463661591265257}
   - component: {fileID: 346084649645555831}
   - component: {fileID: 2870720180813803913}
   - component: {fileID: 2430824959274829880}
@@ -44,25 +43,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &856463661591265257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374204865929736487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f4db539bdce13468c0b334153d8a89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncMode: 0
-  syncInterval: 0.1
-  data: {fileID: 11400000, guid: 3cd8ef2305cd24b4f941782b0a9b7b5a, type: 2}
-  building: {fileID: 0}
-  ProducedUnits:
-  - {fileID: 4649268146969693439, guid: cc5139a033190b24b9d0331bf28ebe33, type: 3}
-  - {fileID: 8163867707323499168, guid: f507ae55ffca6224b91a0dd3f4606525, type: 3}
 --- !u!114 &346084649645555831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,12 +61,15 @@ MonoBehaviour:
   Team: 1
   Health: 0
   MaxHealth: 1000
+  BuildingIndex: 0
   Cost: 100
   BuildEnemyUnitRange: 0
   BuildEnemyBuildingRange: 3.5
   BuildUnitRange: 0
   BuildBuildingRange: 3
   BuildCrystalRange: 0
+  ParentBuilding: {fileID: 0}
+  healthBarScript: {fileID: 0}
 --- !u!114 &2870720180813803913
 MonoBehaviour:
   m_ObjectHideFlags: 0

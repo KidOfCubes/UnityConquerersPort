@@ -5,7 +5,6 @@ using UnityEngine;
 public class DataHolder : ScriptableObject
 {
     public GameObject[] Buildings;
-    public GameObject[] PlacableBuildings;
     public GameObject[] Units;
     public GameObject[] SelectOutlines;
     public List<GameObject> EnergyCrystals = new List<GameObject>();

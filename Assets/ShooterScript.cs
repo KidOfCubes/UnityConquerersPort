@@ -54,6 +54,7 @@ public class ShooterScript : NetworkBehaviour
                         if ((thing.transform.position - transform.position).magnitude <= Range)
                         {
                             Target = thing;
+                            transform.LookAt(Target.transform);
                         }
                     }
                 }
@@ -69,12 +70,14 @@ public class ShooterScript : NetworkBehaviour
                         {
                             //Debug.Log("FOUND UNIT TO ATTACK");
                             Target = thing;
+                            transform.LookAt(Target.transform);
                         }
                     }
                 }
             }
             if (Target != null)
             {
+                transform.LookAt(Target.transform);
                 if (Target.TryGetComponent<Building>(out Building building))
                 {
                     building.Health -= Damage;

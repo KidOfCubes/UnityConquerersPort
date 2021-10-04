@@ -63,6 +63,7 @@ public class CommanderScript : NetworkBehaviour
                     selectedUiGhostPositions.Add(new Vector2(x, y), null);
                 }
             }
+            MoneyCounter.color = data.TeamColors[Team];
         }
     }
     private void OnDisable()
@@ -83,6 +84,7 @@ public class CommanderScript : NetworkBehaviour
         if (isLocalPlayer)
         {
             data.money = Money;
+            MoneyCounter.color = data.TeamColors[Team];
             MoneyCounter.text = "Money: " + Money;
         }
     }
@@ -143,9 +145,9 @@ public class CommanderScript : NetworkBehaviour
                 Bounds bounds = new Bounds(
                     (new Vector3((SelectScreenPoint1.x + SelectScreenPoint2.x) / 2, (SelectScreenPoint1.y + SelectScreenPoint2.y) / 2, (SelectScreenPoint1.z + SelectScreenPoint2.z) / 2))
                     , (new Vector3(
-                      (System.Math.Abs(SelectScreenPoint1.x - SelectScreenPoint2.x) / 2) + 10f
-                    , (System.Math.Abs(SelectScreenPoint1.y - SelectScreenPoint2.y) / 2) + 10f
-                    , (System.Math.Abs(SelectScreenPoint1.z - SelectScreenPoint2.z) / 2) + 10f)));
+                      (System.Math.Abs(SelectScreenPoint1.x - SelectScreenPoint2.x) / 2) + 50f
+                    , (System.Math.Abs(SelectScreenPoint1.y - SelectScreenPoint2.y) / 2) + 50f
+                    , (System.Math.Abs(SelectScreenPoint1.z - SelectScreenPoint2.z) / 2) + 50f)));
                 //Debug.Log("SELECTED "+bounds);
                 foreach (GameObject thing in data.ActiveUnits)
                 {
@@ -214,24 +216,54 @@ public class CommanderScript : NetworkBehaviour
                 {
                     unit = unit.ParentUnit;
                 }
+                if (unit.Team != Team) { return; }
+                if (!unit.enabled) { return; }
                 if (unit.select(Team))
                 {
                     selected.Add(unit.gameObject);
-                    SelectedInGui(unit, true);
+                    SelectedInGui(unit.gameObject, true);
                 }
                 else
                 {
-                    SelectedInGui(unit, false);
+                    SelectedInGui(unit.gameObject, false);
                     selected.Remove(unit.gameObject);
+                }
+            }
+            if (thing.TryGetComponent<Building>(out Building building))
+            {
+                Debug.Log("CLICK unit from team " + Team);
+                if (building.ParentBuilding != null)
+                {
+                    building = building.ParentBuilding;
+                }
+                if (building.Team != Team) { return; }
+                if (!building.enabled) { return; }
+                if (building.select(Team))
+                {
+                    selected.Add(building.gameObject);
+                    SelectedInGui(building.gameObject, true);
+                }
+                else
+                {
+                    SelectedInGui(building.gameObject, false);
+                    selected.Remove(building.gameObject);
                 }
             }
         }
     }
-    private void SelectedInGui(Unit unit, bool select)
+    private void SelectedInGui(GameObject thing, bool select)
     {
         if (select)
         {
-            GameObject ghost = Instantiate(data.Units[unit.UnitIndex]);
+            GameObject ghost=null;
+            if (thing.TryGetComponent<Building>(out Building building))
+            {
+                ghost = Instantiate(data.Buildings[building.BuildingIndex]);
+            }
+            if (thing.TryGetComponent<Unit>(out Unit unit))
+            {
+                ghost = Instantiate(data.Units[unit.UnitIndex]);
+            }
             foreach (Behaviour component in ghost.GetComponents<Behaviour>())
             {
                 if (!(component.GetType()).IsSubclassOf(typeof(Renderer)))
@@ -285,7 +317,15 @@ public class CommanderScript : NetworkBehaviour
             ghost.transform.GetComponent<MeshCollider>().isTrigger = true;
             ghost.transform.GetComponent<MeshRenderer>().materials = materials;
             ghost.transform.GetComponent<MeshCollider>().isTrigger = true;
-            ghost.transform.GetComponent<Unit>().ParentUnit = unit;
+            if (thing.TryGetComponent<Building>(out _))
+            {
+                ghost.transform.GetComponent<Building>().ParentBuilding = building;
+            }
+            if (thing.TryGetComponent<Unit>(out _))
+            {
+                ghost.transform.GetComponent<Unit>().ParentUnit = unit;
+            }
+            
             ghost.layer = 5;
             ghost.transform.gameObject.SetActive(true);
             for (int i = 0; i < ghost.transform.childCount; i++)
@@ -314,11 +354,19 @@ public class CommanderScript : NetworkBehaviour
             /*                    Destroy(ghost.transform);
                                 ghost.AddComponent<RectTransform>();*/
             ghost.transform.SetParent(selectedGameObject.transform, true);
-            ghost.transform.localScale = new Vector3(150, 150, 1);
+            if (thing.TryGetComponent<Building>(out _))
+            {
+                ghost.transform.localScale = new Vector3(55, 55, 55);
+                ghost.transform.localRotation = Quaternion.Euler(-25, 315, 25);
+            }
+            if (thing.TryGetComponent<Unit>(out _))
+            {
+                ghost.transform.localScale = new Vector3(150, 150, 150);
+                ghost.transform.localRotation = Quaternion.Euler(10, -225, -10);
+            }
             //ghost.transform.localRotation = Quaternion.Euler(0,0,0);
-            ghost.transform.localRotation = Quaternion.Euler(0, 180, 0);
             ghost.transform.gameObject.SetActive(true);
-            selectedUiGhosts.Add(unit.gameObject, ghost);
+            selectedUiGhosts.Add(thing, ghost);
             for (int y = 0; y < 5; y++)
             {
                 for (int x = 0; x < 5; x++)
@@ -326,7 +374,14 @@ public class CommanderScript : NetworkBehaviour
                     if(selectedUiGhostPositions[new Vector2(x, y)] == null)
                     {
                         selectedUiGhostPositions[new Vector2(x, y)] = ghost;
-                        ghost.transform.localPosition = new Vector3((x * 60) + 30, (y * 60), 0);
+                        if (thing.TryGetComponent<Building>(out _))
+                        {
+                            ghost.transform.localPosition = new Vector3((x * 60) + 30, (y * 60)+30, 0);
+                        }
+                        if (thing.TryGetComponent<Unit>(out _))
+                        {
+                            ghost.transform.localPosition = new Vector3((x * 60) + 30, (y * 60)+15, 0);
+                        }
                         return;
                     }
                 }
@@ -337,14 +392,14 @@ public class CommanderScript : NetworkBehaviour
             Vector2 keytoDelete=new Vector2(0,0);
             foreach(KeyValuePair<Vector2, GameObject> pair in selectedUiGhostPositions)
             {
-                if(pair.Value== selectedUiGhosts[unit.gameObject])
+                if(pair.Value==selectedUiGhosts[thing])
                 {
                     keytoDelete = pair.Key;
                 }
             }
             selectedUiGhostPositions[keytoDelete] = null;
-            Destroy(selectedUiGhosts[unit.gameObject]);
-            selectedUiGhosts.Remove(unit.gameObject);
+            Destroy(selectedUiGhosts[thing]);
+            selectedUiGhosts.Remove(thing);
             bool preivousempty = false;
             Vector2 previousPosition = Vector2.zero;
             for(int y = 0; y < 5; y++)
@@ -365,7 +420,15 @@ public class CommanderScript : NetworkBehaviour
                             Debug.Log("MOVED SMTH " + pair.Value.name);
                             selectedUiGhostPositions[previousPosition] = pair.Value;
                             selectedUiGhostPositions[pair.Key] = null;
-                            selectedUiGhostPositions[previousPosition].transform.localPosition = new Vector3((previousPosition.x * 60) + 30, (previousPosition.y * 60), 0);
+
+                            if (selectedUiGhostPositions[previousPosition].TryGetComponent<Building>(out _))
+                            {
+                                selectedUiGhostPositions[previousPosition].transform.localPosition = new Vector3((previousPosition.x * 60) + 30, (previousPosition.y * 60)+30, 0);
+                            }
+                            if (selectedUiGhostPositions[previousPosition].TryGetComponent<Unit>(out _))
+                            {
+                                selectedUiGhostPositions[previousPosition].transform.localPosition = new Vector3((previousPosition.x * 60) + 30, (previousPosition.y * 60)+15, 0);
+                            }
                         }
                     }
                     previousPosition = new Vector2(x, y);

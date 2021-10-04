@@ -10,6 +10,7 @@ public class Unit : NetworkBehaviour
 {
     public DataHolder data;
     bool selected=false;
+    ShooterScript shooterScript;
     GameObject selectCircle;
     GameObject targetLine;
     public Vector3 target;
@@ -19,13 +20,19 @@ public class Unit : NetworkBehaviour
     public float Health;
     public float Cost;
     public float MaxHealth;
+    
     public int UnitIndex;
     public Unit ParentUnit;
+
     public HealthBarScript healthBarScript;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("START");
+        if(TryGetComponent<ShooterScript>(out ShooterScript _shooterScript))
+        {
+            shooterScript = _shooterScript;
+        }
         Vector3 temppos = transform.position;
         transform.position = Vector3.zero;
         MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
@@ -90,6 +97,8 @@ public class Unit : NetworkBehaviour
         {
             data.ActiveUnits.Remove(gameObject);
         }
+        if (targetLine != null) { Destroy(targetLine); }
+        Destroy(healthBarScript.gameObject);
     }
     private void OnDestroy()
     {
@@ -97,14 +106,18 @@ public class Unit : NetworkBehaviour
         {
             data.ActiveUnits.Remove(gameObject);
         }
+        if (targetLine != null) { Destroy(targetLine); }
+        Destroy(healthBarScript.gameObject);
     }
     private void OnHealthChanged(float oldValue, float newValue)
     {
         if (Health <= 0)
         {
             OnDisable();
-            data.Commander.ClickOnObject(0, gameObject);
-            Destroy(healthBarScript.gameObject);
+            if (selected)
+            {
+                data.Commander.ClickOnObject(0, gameObject);
+            }
             Destroy(gameObject);
         }
         if (healthBarScript != null)
@@ -149,10 +162,21 @@ public class Unit : NetworkBehaviour
             target = position+new Vector3(Random.Range(-0.5f, 0.5f),0, Random.Range(-0.5f, 0.5f));
             if (targetLine == null) targetLine = Instantiate(data.TargetLine);
 
-            targetLine.transform.parent = transform;
+            //targetLine.transform.parent = transform;
             targetLine.transform.position = new Vector3((target.x + transform.position.x) / 2, (target.y + transform.position.y) / 2, (target.z + transform.position.z) / 2);
             targetLine.transform.localScale = new Vector3(0.1f, 0.1f, Vector3.Distance(transform.position, target));
             targetLine.transform.LookAt(target);
+        }
+    }
+    private bool hasShooterTarget()
+    {
+        if (shooterScript != null)
+        {
+            return shooterScript.Target != null;
+        }
+        else
+        {
+            return false;
         }
     }
     private void FixedUpdate()
@@ -161,6 +185,10 @@ public class Unit : NetworkBehaviour
         {
             targetLine.transform.position = new Vector3((target.x + transform.position.x) / 2, (target.y + transform.position.y) / 2, (target.z + transform.position.z) / 2);
             targetLine.transform.localScale = new Vector3(0.1f, 0.1f, Vector3.Distance(transform.position, target));
+            if (!hasShooterTarget())
+            {
+                transform.LookAt(target);
+            }
             targetLine.transform.LookAt(target);
             //MoveTo(transform.position + (((target - transform.position).normalized) / 60f));
             transform.position += ((target - transform.position).normalized) / 60f;

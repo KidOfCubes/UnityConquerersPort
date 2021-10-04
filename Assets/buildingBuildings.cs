@@ -42,17 +42,17 @@ public class buildingBuildings : NetworkBehaviour
         {
             if (placing)
             {
-                Debug.Log("Y WAS1 " + Input.mouseScrollDelta.y);
+/*                Debug.Log("Y WAS1 " + Input.mouseScrollDelta.y);
                 Debug.Log("Y WAS " + data.Buildings.Length);
-                Debug.Log("Y WAS " + (BuildingIndex + (int)Input.mouseScrollDelta.y));
+                Debug.Log("Y WAS " + (BuildingIndex + (int)Input.mouseScrollDelta.y));*/
                 BuildingIndex = (BuildingIndex + (int)Input.mouseScrollDelta.y);
-                while (BuildingIndex >= data.PlacableBuildings.Length)
+                while (BuildingIndex >= data.Buildings.Length)
                 {
-                    BuildingIndex -= data.PlacableBuildings.Length;
+                    BuildingIndex -= data.Buildings.Length;
                 }
                 while (BuildingIndex < 0)
                 {
-                    BuildingIndex += data.PlacableBuildings.Length;
+                    BuildingIndex += data.Buildings.Length;
                 }
                 ToggleGhost();
                 ToggleGhost();
@@ -96,6 +96,7 @@ public class buildingBuildings : NetworkBehaviour
     void SpawnBuilding(int index, Vector3 position)
     {
         GameObject thing = Instantiate(data.Buildings[index], position, Quaternion.identity);
+        thing.GetComponent<Building>().BuildingIndex = BuildingIndex;
         thing.GetComponent<Building>().Team = commanderScript.Team;
         NetworkServer.Spawn(thing);
     }
@@ -110,7 +111,7 @@ public class buildingBuildings : NetworkBehaviour
         placing = !placing;
         if (placing)
         {
-            ghost = Instantiate(data.PlacableBuildings[BuildingIndex]);
+            ghost = Instantiate(data.Buildings[BuildingIndex]);
             foreach (Behaviour component in ghost.GetComponents<Behaviour>())
             {
                 if (!(component.GetType()).IsSubclassOf(typeof(Renderer)))

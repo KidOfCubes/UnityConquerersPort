@@ -363,12 +363,15 @@ MonoBehaviour:
   Team: 0
   Health: 0
   MaxHealth: 50
-  Cost: 250
+  BuildingIndex: 0
+  Cost: 65
   BuildEnemyUnitRange: 0
   BuildEnemyBuildingRange: 0
   BuildUnitRange: 1
   BuildBuildingRange: 2
   BuildCrystalRange: 1
+  ParentBuilding: {fileID: 0}
+  healthBarScript: {fileID: 0}
 --- !u!33 &1904245907261031995
 MeshFilter:
   m_ObjectHideFlags: 0

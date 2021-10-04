@@ -16,10 +16,7 @@ MonoBehaviour:
   - {fileID: 1374204865929736487, guid: f785bf298cfb6bb42a92dcd66ab8a556, type: 3}
   - {fileID: 6475285973874894208, guid: 53bce828205d64d4985857dca79db592, type: 3}
   - {fileID: 7451274530898856453, guid: 6169b1281d7d1e24984cbff2a05c3875, type: 3}
-  PlacableBuildings:
-  - {fileID: 1374204865929736487, guid: f785bf298cfb6bb42a92dcd66ab8a556, type: 3}
-  - {fileID: 6475285973874894208, guid: 53bce828205d64d4985857dca79db592, type: 3}
-  - {fileID: 7451274530898856453, guid: 6169b1281d7d1e24984cbff2a05c3875, type: 3}
+  - {fileID: 1564364174983938595, guid: 54ca02a6f43da4740ba8c7de353dd88e, type: 3}
   Units:
   - {fileID: 4649268146969693439, guid: cc5139a033190b24b9d0331bf28ebe33, type: 3}
   - {fileID: 8163867707323499168, guid: f507ae55ffca6224b91a0dd3f4606525, type: 3}
@@ -39,4 +36,4 @@ MonoBehaviour:
   - {fileID: 3570581131736876639, guid: 5d2dc9089f2504e429521d697bb0bb04, type: 3}
   - {fileID: 8067504666981667938, guid: 5e8f910de69ab6c4eb431b8f80cd1f32, type: 3}
   Commander: {fileID: 0}
-  money: 450
+  money: 500
