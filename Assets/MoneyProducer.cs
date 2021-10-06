@@ -15,7 +15,9 @@ public class MoneyProducer : NetworkBehaviour
     {
         if (!isServer)
         {
-            this.enabled = false;
+            GetComponent<MoneyProducer>().enabled = false;
+            if (TryGetComponent<Building>(out Building building)) Team = building.Team;
+            if (TryGetComponent<Unit>(out Unit unit)) Team = unit.Team;
         }
         else
         {
@@ -32,7 +34,12 @@ public class MoneyProducer : NetworkBehaviour
         if (time >= CashInterval)
         {
             time = time - CashInterval;
-            data.ActiveCommanders[Team].GetComponent<CommanderScript>().Money += CashMoney;
+            foreach(KeyValuePair<int, CommanderScript> pair in data.ActiveCommanders)
+            {
+                Debug.Log("ACTIVE COMMANDERS LIST " + pair.Key+":"+pair.Value.name+" TEAM IM LOOKING FOR IS "+Team+"AND I AM "+isServer+" ON SERVER");
+            }
+            Debug.Log("THING " + gameObject.name+ " GENERATED CASH FOR " + data.ActiveCommanders[Team].name);
+            data.ActiveCommanders[Team].Money += CashMoney;
         }
     }
 }

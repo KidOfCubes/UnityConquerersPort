@@ -290,7 +290,7 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 108ada9e251f1eed7e44035ff599f257
+      Hash: 4a8f878ee5df3582f3278cdaa078bf5a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CommanderScript
@@ -668,7 +668,7 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
-      Hash: 8d7769389c1b69757ee07693ea48b6e2
+      Hash: f46b97edadad28ad06b6c1ea52953438
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnergyCrystal

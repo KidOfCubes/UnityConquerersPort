@@ -17,9 +17,18 @@ MonoBehaviour:
   - {fileID: 6475285973874894208, guid: 53bce828205d64d4985857dca79db592, type: 3}
   - {fileID: 7451274530898856453, guid: 6169b1281d7d1e24984cbff2a05c3875, type: 3}
   - {fileID: 1564364174983938595, guid: 54ca02a6f43da4740ba8c7de353dd88e, type: 3}
+  - {fileID: 8452969072264939582, guid: 6b2723256f89d8c4382a5b1233c0cf15, type: 3}
+  - {fileID: 5233259968480864696, guid: 4736bd5e4c0859a4dab91a51a276dedd, type: 3}
+  - {fileID: 4361386947071006394, guid: 50e5fb7050a68a34f8a11b5035c1c8c2, type: 3}
+  - {fileID: 7804249248024323520, guid: 28527693dedcc3f45868593f108e4e5f, type: 3}
+  - {fileID: 1995140332139547440, guid: d2f5c62627afc4c4e8226c2959802d4c, type: 3}
   Units:
   - {fileID: 4649268146969693439, guid: cc5139a033190b24b9d0331bf28ebe33, type: 3}
   - {fileID: 8163867707323499168, guid: f507ae55ffca6224b91a0dd3f4606525, type: 3}
+  - {fileID: 2913816897596444963, guid: 0bb6397e555d1fe4dadee6565db4743e, type: 3}
+  - {fileID: 67119250302262778, guid: b8b62ed3c87011346a726f85a6610bb1, type: 3}
+  - {fileID: 3791652980691098699, guid: d53243311dca0504aa3567a6cf5c6805, type: 3}
+  - {fileID: 1632358374550562334, guid: 75ef646b8faba084f966c137193690d0, type: 3}
   SelectOutlines:
   - {fileID: 4650959658331780124, guid: d0e9b53c4f856bb409e41f400d18fb45, type: 3}
   EnergyCrystals: []
@@ -36,4 +45,4 @@ MonoBehaviour:
   - {fileID: 3570581131736876639, guid: 5d2dc9089f2504e429521d697bb0bb04, type: 3}
   - {fileID: 8067504666981667938, guid: 5e8f910de69ab6c4eb431b8f80cd1f32, type: 3}
   Commander: {fileID: 0}
-  money: 500
+  money: 350

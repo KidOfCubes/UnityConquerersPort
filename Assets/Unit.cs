@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshCollider))]
+[RequireComponent(typeof(NetworkTransform))]
 public class Unit : NetworkBehaviour
 {
     public DataHolder data;
@@ -13,6 +14,7 @@ public class Unit : NetworkBehaviour
     ShooterScript shooterScript;
     GameObject selectCircle;
     GameObject targetLine;
+    [SyncVar]
     public Vector3 target;
     [SyncVar]
     public int Team;
@@ -33,6 +35,7 @@ public class Unit : NetworkBehaviour
         {
             shooterScript = _shooterScript;
         }
+        GetComponent<MeshCollider>().convex = true;
         Vector3 temppos = transform.position;
         transform.position = Vector3.zero;
         MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
@@ -78,9 +81,10 @@ public class Unit : NetworkBehaviour
         transform.position = temppos;
         if (isServer)
         {
+            target = new Vector3(69,69,69);
             Health = MaxHealth;
-            data.ActiveUnits.Add(gameObject);
         }
+        data.ActiveUnits.Add(gameObject);
         GameObject tempthing = Instantiate(data.HealthBarPrefab);
         healthBarScript = tempthing.GetComponent<HealthBarScript>();
         healthBarScript.MaxHealth = MaxHealth;
@@ -97,8 +101,9 @@ public class Unit : NetworkBehaviour
         {
             data.ActiveUnits.Remove(gameObject);
         }
+        data.ActiveUnits.Remove(gameObject);
         if (targetLine != null) { Destroy(targetLine); }
-        Destroy(healthBarScript.gameObject);
+        if (healthBarScript != null) { Destroy(healthBarScript.gameObject); }
     }
     private void OnDestroy()
     {
@@ -106,8 +111,18 @@ public class Unit : NetworkBehaviour
         {
             data.ActiveUnits.Remove(gameObject);
         }
+        data.ActiveUnits.Remove(gameObject);
         if (targetLine != null) { Destroy(targetLine); }
-        Destroy(healthBarScript.gameObject);
+        if (healthBarScript != null) { Destroy(healthBarScript.gameObject); }
+    }
+    public void UpdateMesh()
+    {
+        if (ParentUnit != null)
+        {
+            GetComponent<MeshFilter>().mesh = ParentUnit.GetComponent<MeshFilter>().mesh;
+            GetComponent<MeshCollider>().sharedMesh = ParentUnit.GetComponent<MeshCollider>().sharedMesh;
+            GetComponent<MeshRenderer>().materials = ParentUnit.GetComponent<MeshRenderer>().materials;
+        }
     }
     private void OnHealthChanged(float oldValue, float newValue)
     {
@@ -116,7 +131,9 @@ public class Unit : NetworkBehaviour
             OnDisable();
             if (selected)
             {
-                data.Commander.ClickOnObject(0, gameObject);
+                Debug.Log("REMOVED FROM SELECTED");
+                data.Commander.SelectedInGui(gameObject, false);
+                data.Commander.selected.Remove(gameObject);
             }
             Destroy(gameObject);
         }
@@ -155,17 +172,12 @@ public class Unit : NetworkBehaviour
             return false;
         }
     }
+    [Command]
     public void setTarget(Vector3 position, int team)
     {
         if (team == Team)
         {
             target = position+new Vector3(Random.Range(-0.5f, 0.5f),0, Random.Range(-0.5f, 0.5f));
-            if (targetLine == null) targetLine = Instantiate(data.TargetLine);
-
-            //targetLine.transform.parent = transform;
-            targetLine.transform.position = new Vector3((target.x + transform.position.x) / 2, (target.y + transform.position.y) / 2, (target.z + transform.position.z) / 2);
-            targetLine.transform.localScale = new Vector3(0.1f, 0.1f, Vector3.Distance(transform.position, target));
-            targetLine.transform.LookAt(target);
         }
     }
     private bool hasShooterTarget()
@@ -181,27 +193,42 @@ public class Unit : NetworkBehaviour
     }
     private void FixedUpdate()
     {
-        if (targetLine != null)
+
+        if ((target - transform.position).magnitude >= (1f / 60f)&&target!=new Vector3(69, 69, 69))
         {
-            targetLine.transform.position = new Vector3((target.x + transform.position.x) / 2, (target.y + transform.position.y) / 2, (target.z + transform.position.z) / 2);
-            targetLine.transform.localScale = new Vector3(0.1f, 0.1f, Vector3.Distance(transform.position, target));
-            if (!hasShooterTarget())
+            if (isServer)
             {
-                transform.LookAt(target);
+                if (!hasShooterTarget())
+                {
+                    transform.LookAt(target);
+                }
+                //MoveTo(transform.position + (((target - transform.position).normalized) / 60f));
+                //Debug.Log("Moved");
+                MoveTo(transform.position + (((target - transform.position).normalized) / 60f));
+                //transform.position += (((target - transform.position).normalized) / 60f);
+                if ((target - transform.position).magnitude < 1f / 60f)
+                {
+                    MoveTo(target);
+                    //MoveTo(target);
+                }
             }
-            targetLine.transform.LookAt(target);
-            //MoveTo(transform.position + (((target - transform.position).normalized) / 60f));
-            transform.position += ((target - transform.position).normalized) / 60f;
-            if ((target - transform.position).magnitude < 1f / 60f)
+            if (Team == data.Commander.Team)
             {
-                transform.position = target;
-                //MoveTo(target);
-                Destroy(targetLine);
-                targetLine = null;
+                if (targetLine == null) targetLine = Instantiate(data.TargetLine);
+                targetLine.transform.position = new Vector3((target.x + transform.position.x) / 2, (target.y + transform.position.y) / 2, (target.z + transform.position.z) / 2);
+                targetLine.transform.localScale = new Vector3(0.1f, 0.1f, Vector3.Distance(transform.position, target));
+                targetLine.transform.LookAt(target);
+                if ((target - transform.position).magnitude < 1f / 60f)
+                {
+                    Destroy(targetLine);
+                    targetLine = null;
+                }
             }
+
         }
+
     }
-    [Command]
+    //[Command]
     private void MoveTo(Vector3 pos)
     {
         transform.position = pos;

@@ -30,21 +30,23 @@ public class GameManager : NetworkBehaviour
     }
     public static int getTeam()
     {
+        Debug.Log("ASKED FOR TEAM");
         List<int> openTeams = new List<int>();
         for(int i=0;i<Teams.Length;i++)
         {
             if (Teams[i])
             {
                 openTeams.Add(i);
+                Debug.Log("team " + i + " is open");
             }
         }
-        int randTeam = openTeams[Random.Range(0, openTeams.Count - 1)];
+        int randTeam = openTeams[Random.Range(0, openTeams.Count)];
         Teams[randTeam] = false;
         return randTeam;
     }
 
     public static void leaveTeam(int team)
     {
-        Teams[team] = false;
+        Teams[team] = true;
     }
 }

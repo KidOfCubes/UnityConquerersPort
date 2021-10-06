@@ -10,7 +10,7 @@ public class DataHolder : ScriptableObject
     public List<GameObject> EnergyCrystals = new List<GameObject>();
     public List<GameObject> ActiveUnits = new List<GameObject>();
     public List<GameObject> ActiveBuildings = new List<GameObject>();
-    public Dictionary<int,GameObject> ActiveCommanders = new Dictionary<int, GameObject>();
+    public Dictionary<int, CommanderScript> ActiveCommanders = new Dictionary<int, CommanderScript>();
     public Color[] TeamColors;
     public GameObject TargetLine;
     public GameObject HealthBarPrefab;

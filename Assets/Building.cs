@@ -73,7 +73,7 @@ public class Building : NetworkBehaviour
         }
         foreach(GameObject crystal in data.EnergyCrystals)
         {
-            if ((crystal.transform.position - transform.position).magnitude <= BuildCrystalRange && BuildCrystalRange != 0)
+            if ((crystal.transform.position - transform.position).magnitude <= BuildCrystalRange && BuildCrystalRange != 0 && !crystal.GetComponent<EnergyCrystal>().Taken)
             {
                 CrystalRequirement = true;
             }
@@ -90,9 +90,33 @@ public class Building : NetworkBehaviour
         //Debug.Log("FriendlyRequirements " + FriendlyRequirements + " EnemyRequirements " + EnemyRequirements + " CrystalRequirement " + CrystalRequirement + " Cost " + (data.money >= Cost));
         return FriendlyRequirements && EnemyRequirements && CrystalRequirement && data.money>=Cost;
     }
+    public bool TakeCrystal()
+    {
+        foreach (GameObject crystal in data.EnergyCrystals)
+        {
+            if ((crystal.transform.position - transform.position).magnitude <= BuildCrystalRange&&!crystal.GetComponent<EnergyCrystal>().Taken)
+            {
+                crystal.GetComponent<EnergyCrystal>().Taken = true;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void UpdateMesh()
+    {
+        if (ParentBuilding != null)
+        {
+            GetComponent<MeshFilter>().mesh = ParentBuilding.GetComponent<MeshFilter>().mesh;
+            GetComponent<MeshCollider>().sharedMesh = ParentBuilding.GetComponent<MeshCollider>().sharedMesh;
+            GetComponent<MeshRenderer>().materials = ParentBuilding.GetComponent<MeshRenderer>().materials;
+        }
+    }
     void Start()
     {
         GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<MeshCollider>().convex = true;
         Vector3 temppos = transform.position;
         transform.position = Vector3.zero;
         MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
@@ -129,8 +153,8 @@ public class Building : NetworkBehaviour
         if (isServer)
         {
             Health = MaxHealth;
-            data.ActiveBuildings.Add(gameObject);
         }
+        data.ActiveBuildings.Add(gameObject);
         GameObject tempthing = Instantiate(data.HealthBarPrefab);
         healthBarScript = tempthing.GetComponent<HealthBarScript>();
         healthBarScript.MaxHealth = MaxHealth;
@@ -148,6 +172,7 @@ public class Building : NetworkBehaviour
             data.ActiveBuildings.Remove(gameObject);
         }
         data.ActiveBuildings.Remove(gameObject);
+        if (healthBarScript != null) { Destroy(healthBarScript.gameObject); }
     }
     private void OnDestroy()
     {
@@ -156,6 +181,7 @@ public class Building : NetworkBehaviour
             data.ActiveBuildings.Remove(gameObject);
         }
         data.ActiveBuildings.Remove(gameObject);
+        if (healthBarScript != null) { Destroy(healthBarScript.gameObject); }
     }
     public bool select(int team)
     {

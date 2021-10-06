@@ -9,12 +9,15 @@ public class DataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("MANAGED");
         foreach (GameObject prefab in data.Units)
         {
+            Debug.Log("REGISTERED " + prefab.name);
             NetworkClient.RegisterPrefab(prefab);
         }
         foreach (GameObject prefab in data.Buildings)
         {
+            Debug.Log("REGISTERED " + prefab.name);
             NetworkClient.RegisterPrefab(prefab);
         }
 

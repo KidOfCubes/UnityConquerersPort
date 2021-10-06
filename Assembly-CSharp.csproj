@@ -68,10 +68,10 @@
     <Compile Include="Assets\GhostScript.cs" />
     <Compile Include="Assets\DataHolder.cs" />
     <Compile Include="Assets\Unit.cs" />
+    <Compile Include="Assets\HealthBarScript.cs" />
     <Compile Include="Assets\buildingBuildings.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Building.cs" />
-    <Compile Include="Assets\HealthBarScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

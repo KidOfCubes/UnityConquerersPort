@@ -17,6 +17,7 @@ public class CommanderScript : NetworkBehaviour
     public TextMeshProUGUI MoneyCounter;
     [SyncVar]
     public int Team;
+
     [SyncVar(hook = nameof(OnMoneyChanged))]
     public float Money;
 
@@ -31,24 +32,33 @@ public class CommanderScript : NetworkBehaviour
 
     public Vector2 SizeOfSelected;
 
-    [SyncVar]
-    List<GameObject> selected = new List<GameObject>();
+    //[SyncVar]
+    public List<GameObject> selected = new List<GameObject>();
 
     Dictionary<GameObject, GameObject> selectedUiGhosts = new Dictionary<GameObject, GameObject>();
     Dictionary<Vector2, GameObject> selectedUiGhostPositions = new Dictionary<Vector2, GameObject>();
 
     void Start()
     {
+        Debug.Log("A COMMANDER CALLED " + gameObject.name);
         if (isServer)
         {
             GameManager.onJoin();
             Team = GameManager.getTeam();
-            data.ActiveCommanders.Add(Team,gameObject);
+            Debug.Log("MY TEAM IS NOW " + Team+ "and i added "+ GetComponent<CommanderScript>().name);
+            data.ActiveCommanders.Add(Team, GetComponent<CommanderScript>());
+            foreach (KeyValuePair<int, CommanderScript> pair in data.ActiveCommanders)
+            {
+                Debug.Log("ACTIVE COMMANDERS LIST100 " + pair.Key + ":" + pair.Value.name);
+            }
         }
         Debug.LogError("CONSOLE OPEN");
         if (!isLocalPlayer)
         {
-            Destroy(GetComponent<CommanderScript>());
+            Debug.Log("DESTROYED HAHA");
+            GetComponent<CommanderScript>().enabled = false;
+            Destroy(MoneyCounter.gameObject);
+            //Destroy(gameObject);
         }
         else
         {
@@ -68,19 +78,25 @@ public class CommanderScript : NetworkBehaviour
     }
     private void OnDisable()
     {
-        if (isServer)
-        {
-            data.ActiveCommanders.Remove(Team);
-            GameManager.leaveTeam(Team);
-        }
+
         if (isLocalPlayer)
         {
             Camera.main.enabled = true;
             playerCamera.enabled = false;
         }
     }
+    private void OnDestroy()
+    {
+        if (isServer)
+        {
+            data.ActiveCommanders.Remove(Team);
+            GameManager.leaveTeam(Team);
+        }
+    }
     private void OnMoneyChanged(float oldValue, float newValue)
     {
+        //Debug.Log("IS LOCAL PLAYER" + isLocalPlayer+" OLD VALUE "+oldValue+" NEW VALUE"+newValue);
+        //Debug.Log("IS LOCAL PLAYER" + isLocalPlayer + " FROM " + gameObject.name);
         if (isLocalPlayer)
         {
             data.money = Money;
@@ -251,7 +267,7 @@ public class CommanderScript : NetworkBehaviour
             }
         }
     }
-    private void SelectedInGui(GameObject thing, bool select)
+    public void SelectedInGui(GameObject thing, bool select)
     {
         if (select)
         {
@@ -320,10 +336,12 @@ public class CommanderScript : NetworkBehaviour
             if (thing.TryGetComponent<Building>(out _))
             {
                 ghost.transform.GetComponent<Building>().ParentBuilding = building;
+                ghost.transform.GetComponent<Building>().UpdateMesh();
             }
             if (thing.TryGetComponent<Unit>(out _))
             {
                 ghost.transform.GetComponent<Unit>().ParentUnit = unit;
+                ghost.transform.GetComponent<Unit>().UpdateMesh();
             }
             
             ghost.layer = 5;

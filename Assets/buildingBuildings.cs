@@ -86,6 +86,7 @@ public class buildingBuildings : NetworkBehaviour
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, Physics.AllLayers, QueryTriggerInteraction.Ignore))
         { 
             RemoveMoney(ghost.GetComponent<Building>().Cost);
+            ghost.GetComponent<Building>().TakeCrystal();
             SpawnBuilding(BuildingIndex,hit.point);
             placing = true;
             ToggleGhost();
