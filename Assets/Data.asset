@@ -39,10 +39,11 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
   - {r: 1, g: 1, b: 0, a: 1}
-  TargetLine: {fileID: 4551688436718970220, guid: 3a70a7676f31cee45abc57b884992a4e, type: 3}
-  HealthBarPrefab: {fileID: 4477308368685146672, guid: 0c3eab45053d86e4297f4be1622b33af, type: 3}
-  ProducerPrefabs:
+  MiscPrefabGameObjects:
   - {fileID: 3570581131736876639, guid: 5d2dc9089f2504e429521d697bb0bb04, type: 3}
   - {fileID: 8067504666981667938, guid: 5e8f910de69ab6c4eb431b8f80cd1f32, type: 3}
+  - {fileID: 4477308368685146672, guid: 0c3eab45053d86e4297f4be1622b33af, type: 3}
+  - {fileID: 4551688436718970220, guid: 3a70a7676f31cee45abc57b884992a4e, type: 3}
+  - {fileID: 4892887697127687002, guid: c7c0f1787cfc5c5429c858f4c80ce7c2, type: 3}
   Commander: {fileID: 0}
-  money: 350
+  money: 12555

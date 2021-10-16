@@ -106,43 +106,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2928}
+      Script: {instanceID: 2930}
     - Class: 114
-      Script: {instanceID: 2996}
-    - Class: 114
-      Script: {instanceID: 3022}
+      Script: {instanceID: 2998}
     - Class: 114
       Script: {instanceID: 3024}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3026}
     - Class: 114
-      Script: {instanceID: 3218}
+      Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 3240}
+      Script: {instanceID: 3220}
     - Class: 114
-      Script: {instanceID: 3400}
+      Script: {instanceID: 3242}
     - Class: 114
-      Script: {instanceID: 3902}
+      Script: {instanceID: 3402}
     - Class: 114
-      Script: {instanceID: 4082}
+      Script: {instanceID: 3904}
     - Class: 114
-      Script: {instanceID: 4194}
+      Script: {instanceID: 4084}
     - Class: 114
-      Script: {instanceID: 4256}
+      Script: {instanceID: 4196}
     - Class: 114
-      Script: {instanceID: 4302}
+      Script: {instanceID: 4258}
     - Class: 114
-      Script: {instanceID: 4346}
+      Script: {instanceID: 4304}
     - Class: 114
-      Script: {instanceID: 4374}
+      Script: {instanceID: 4348}
     - Class: 114
-      Script: {instanceID: 4448}
+      Script: {instanceID: 4376}
     - Class: 114
-      Script: {instanceID: 4474}
+      Script: {instanceID: 4450}
     - Class: 114
-      Script: {instanceID: 4562}
+      Script: {instanceID: 4476}
     - Class: 114
-      Script: {instanceID: 4724}
+      Script: {instanceID: 4564}
+    - Class: 114
+      Script: {instanceID: 4726}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -872,7 +872,7 @@ ScriptsOnlyBuild:
     className: GhostScript
   - hash:
       serializedVersion: 2
-      Hash: 76aed348c870af8540600177926dcc8c
+      Hash: 542c5c64365f76ca8956959932dbe7ce
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataHolder
@@ -998,7 +998,7 @@ ScriptsOnlyBuild:
     className: Player
   - hash:
       serializedVersion: 2
-      Hash: f2ddca9e6c030fafc71eefd49a89798e
+      Hash: bc5cb0df33cf12f1eed53d02c50e44b8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HealthBarScript

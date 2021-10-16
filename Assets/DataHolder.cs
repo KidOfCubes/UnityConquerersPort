@@ -12,9 +12,11 @@ public class DataHolder : ScriptableObject
     public List<GameObject> ActiveBuildings = new List<GameObject>();
     public Dictionary<int, CommanderScript> ActiveCommanders = new Dictionary<int, CommanderScript>();
     public Color[] TeamColors;
-    public GameObject TargetLine;
-    public GameObject HealthBarPrefab;
-    public GameObject[] ProducerPrefabs;
+    //public GameObject TargetLine;
+    //public GameObject HealthBarPrefab;
+    //public GameObject[] ProducerPrefabs;
+    public GameObject[] MiscPrefabGameObjects;
+    public Dictionary<string, GameObject> MiscPrefabs = new Dictionary<string, GameObject>();
 
     public CommanderScript Commander;
 

@@ -62,13 +62,13 @@ public class Producer : NetworkBehaviour
                 }
                 else
                 {
-                    ProduceGui = Instantiate(data.ProducerPrefabs[0]);
+                    ProduceGui = Instantiate(data.MiscPrefabs["ProducerMenu"]);
                     ProduceGui.transform.SetParent(gameObject.transform, false);
                     ProduceGui.transform.localPosition = new Vector3(0, 1, 0);
                     ProduceGui.GetComponent<Canvas>().worldCamera=Camera.main;
                     for(int i = 0; i < ProducedUnits.Length; i++)
                     {
-                        GameObject tempButton = Instantiate(data.ProducerPrefabs[1]);
+                        GameObject tempButton = Instantiate(data.MiscPrefabs["ProducerMenuButton"]);
                         string name = ProducedUnits[i].name;
                         tempButton.GetComponent<TextMeshProUGUI>().text = ProducedUnits[i].GetComponent<Unit>().Cost+"$ "+name;
                         int temp = i;

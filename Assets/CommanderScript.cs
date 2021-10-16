@@ -15,6 +15,7 @@ public class CommanderScript : NetworkBehaviour
     float yRotation = 0f;
     public DataHolder data;
     public TextMeshProUGUI MoneyCounter;
+    public Button SellButton;
     [SyncVar]
     public int Team;
 
@@ -92,6 +93,24 @@ public class CommanderScript : NetworkBehaviour
             data.ActiveCommanders.Remove(Team);
             GameManager.leaveTeam(Team);
         }
+        if (Team == data.Commander.Team)
+        {
+            foreach (GameObject unit in data.ActiveUnits)
+            {
+                if (unit.GetComponent<Unit>().Team == Team)
+                {
+                    unit.GetComponent<Unit>().die();
+                }
+            }
+            foreach (GameObject building in data.ActiveBuildings)
+            {
+                if (building.GetComponent<Building>().Team == Team)
+                {
+                    building.GetComponent<Building>().die();
+                }
+            }
+        }
+
     }
     private void OnMoneyChanged(float oldValue, float newValue)
     {
@@ -376,83 +395,163 @@ public class CommanderScript : NetworkBehaviour
             {
                 ghost.transform.localScale = new Vector3(55, 55, 55);
                 ghost.transform.localRotation = Quaternion.Euler(-25, 315, 25);
+                ghost.GetComponent<Building>().makeHealthBar();
+                building.healthBarScript.otherInstances.Add(ghost.GetComponent<Building>().healthBarScript);
+                building.healthBarScript.UpdateValues();
+
             }
             if (thing.TryGetComponent<Unit>(out _))
             {
                 ghost.transform.localScale = new Vector3(150, 150, 150);
                 ghost.transform.localRotation = Quaternion.Euler(10, -225, -10);
+                ghost.GetComponent<Unit>().makeHealthBar();
+                unit.healthBarScript.otherInstances.Add(ghost.GetComponent<Unit>().healthBarScript);
+                unit.healthBarScript.UpdateValues();
             }
             //ghost.transform.localRotation = Quaternion.Euler(0,0,0);
             ghost.transform.gameObject.SetActive(true);
             selectedUiGhosts.Add(thing, ghost);
-            for (int y = 0; y < 5; y++)
+            addGhostToUi(ghost);
+
+
+        }
+        else
+        {
+            GameObject ghost = selectedUiGhosts[thing];
+            selectedUiGhosts.Remove(thing);
+            removeGhostFromUi(ghost);
+        }
+    }
+    public void removeGhostFromUi(GameObject ghost)
+    {
+        Vector2 keytoDelete = new Vector2(0, 0);
+        foreach (KeyValuePair<Vector2, GameObject> pair in selectedUiGhostPositions)
+        {
+            if (pair.Value == ghost)
             {
-                for (int x = 0; x < 5; x++)
+                keytoDelete = pair.Key;
+            }
+        }
+        selectedUiGhostPositions[keytoDelete] = null;
+        Destroy(ghost);
+        updateSelectedUi();
+
+    }
+    public void addGhostToUi(GameObject ghost)
+    {
+        for (int y = 0; y < 5; y++)
+        {
+            for (int x = 0; x < 5; x++)
+            {
+                if (selectedUiGhostPositions[new Vector2(x, y)] == null)
                 {
-                    if(selectedUiGhostPositions[new Vector2(x, y)] == null)
+                    selectedUiGhostPositions[new Vector2(x, y)] = ghost;
+                    updateSelectedUi();
+                    return;
+                }
+            }
+        }
+    }
+    public void updateSelectedUi()
+    {
+        bool preivousempty = false;
+        Vector2 previousPosition = Vector2.zero;
+        for (int y = 0; y < 5; y++)
+        {
+            for (int x = 0; x < 5; x++)
+            {
+                KeyValuePair<Vector2, GameObject> pair = new KeyValuePair<Vector2, GameObject>(new Vector2(x, y), selectedUiGhostPositions[new Vector2(x, y)]);
+                if (pair.Value == null)
+                {
+                    preivousempty = true;
+                }
+                else
+                {
+                    if (preivousempty)
                     {
-                        selectedUiGhostPositions[new Vector2(x, y)] = ghost;
-                        if (thing.TryGetComponent<Building>(out _))
-                        {
-                            ghost.transform.localPosition = new Vector3((x * 60) + 30, (y * 60)+30, 0);
-                        }
-                        if (thing.TryGetComponent<Unit>(out _))
-                        {
-                            ghost.transform.localPosition = new Vector3((x * 60) + 30, (y * 60)+15, 0);
-                        }
-                        return;
+/*                        Debug.Log("RN I HAVE " + pair.Value.name);
+                        Debug.Log("MOVED SMTH " + previousPosition);
+                        Debug.Log("MOVED SMTH " + pair.Value.name);*/
+                        selectedUiGhostPositions[previousPosition] = pair.Value;
+                        selectedUiGhostPositions[pair.Key] = null;
+
+
                     }
+                }
+                if (selectedUiGhostPositions[previousPosition]!=null)
+                {
+                    if (selectedUiGhostPositions[previousPosition].TryGetComponent<Building>(out _))
+                    {
+                        selectedUiGhostPositions[previousPosition].transform.localPosition = new Vector3((previousPosition.x * 60) + 30, (previousPosition.y * 60) + 30, 0);
+                        selectedUiGhostPositions[previousPosition].transform.localScale = new Vector3(55, 55, 55);
+                        selectedUiGhostPositions[previousPosition].transform.localRotation = Quaternion.Euler(-25, 315, 25);
+                    }
+                    if (selectedUiGhostPositions[previousPosition].TryGetComponent<Unit>(out _))
+                    {
+                        selectedUiGhostPositions[previousPosition].transform.localPosition = new Vector3((previousPosition.x * 60) + 30, (previousPosition.y * 60) + 15, 0);
+                        selectedUiGhostPositions[previousPosition].transform.localScale = new Vector3(150, 150, 150);
+                        selectedUiGhostPositions[previousPosition].transform.localRotation = Quaternion.Euler(10, -225, -10);
+                    }
+                }
+                previousPosition = new Vector2(x, y);
+            }
+        }
+        if (selectedUiGhostPositions[previousPosition] != null)
+        {
+            if (selectedUiGhostPositions[previousPosition].TryGetComponent<Building>(out _))
+            {
+                selectedUiGhostPositions[previousPosition].transform.localPosition = new Vector3((previousPosition.x * 60) + 30, (previousPosition.y * 60) + 30, 0);
+                selectedUiGhostPositions[previousPosition].transform.localScale = new Vector3(55, 55, 55);
+                selectedUiGhostPositions[previousPosition].transform.localRotation = Quaternion.Euler(-25, 315, 25);
+            }
+            if (selectedUiGhostPositions[previousPosition].TryGetComponent<Unit>(out _))
+            {
+                selectedUiGhostPositions[previousPosition].transform.localPosition = new Vector3((previousPosition.x * 60) + 30, (previousPosition.y * 60) + 15, 0);
+                selectedUiGhostPositions[previousPosition].transform.localScale = new Vector3(150, 150, 150);
+                selectedUiGhostPositions[previousPosition].transform.localRotation = Quaternion.Euler(10, -225, -10);
+            }
+        }
+
+        if (selectedUiGhosts.Count == 1)
+        {
+            foreach (KeyValuePair<GameObject, GameObject> pair in selectedUiGhosts)
+            {
+                SellButton.gameObject.SetActive(true);
+                if (pair.Value.TryGetComponent<Building>(out Building building))
+                {
+                    pair.Value.transform.localPosition = new Vector3((2.5f * 60) + 30, (1.5f * 60), 0);
+                    pair.Value.transform.localScale = new Vector3(275, 275, 275);
+                    SellButton.GetComponentInChildren<TextMeshProUGUI>().text = "SELL " + (building.Cost / 2f);
+                }
+                if (pair.Value.TryGetComponent<Unit>(out Unit unit))
+                {
+                    pair.Value.transform.localPosition = new Vector3((2.5f * 60) + 30, (0f * 60) + 30, 0);
+                    pair.Value.transform.localScale = new Vector3(750, 750, 750);
+                    SellButton.GetComponentInChildren<TextMeshProUGUI>().text = "SELL " + (unit.Cost / 2f);
                 }
             }
         }
         else
         {
-            Vector2 keytoDelete=new Vector2(0,0);
-            foreach(KeyValuePair<Vector2, GameObject> pair in selectedUiGhostPositions)
+            SellButton.gameObject.SetActive(false);
+        }
+    }
+    public void clickSellButton()
+    {
+        foreach (KeyValuePair<GameObject, GameObject> pair in selectedUiGhosts)
+        {
+            if (pair.Value.TryGetComponent<Building>(out Building building))
             {
-                if(pair.Value==selectedUiGhosts[thing])
-                {
-                    keytoDelete = pair.Key;
-                }
+                SpendMoney((building.Cost / 2f) * -1f);
+                building.die();
             }
-            selectedUiGhostPositions[keytoDelete] = null;
-            Destroy(selectedUiGhosts[thing]);
-            selectedUiGhosts.Remove(thing);
-            bool preivousempty = false;
-            Vector2 previousPosition = Vector2.zero;
-            for(int y = 0; y < 5; y++)
+            if (pair.Value.TryGetComponent<Unit>(out Unit unit))
             {
-                for (int x = 0; x < 5; x++)
-                {
-                    KeyValuePair<Vector2, GameObject> pair = new KeyValuePair<Vector2,GameObject>(new Vector2(x,y), selectedUiGhostPositions[new Vector2(x, y)]);
-                    if (pair.Value == null)
-                    {
-                        preivousempty = true;
-                    }
-                    else
-                    {
-                        if (preivousempty)
-                        {
-                            Debug.Log("RN I HAVE " + pair.Value.name);
-                            Debug.Log("MOVED SMTH " + previousPosition);
-                            Debug.Log("MOVED SMTH " + pair.Value.name);
-                            selectedUiGhostPositions[previousPosition] = pair.Value;
-                            selectedUiGhostPositions[pair.Key] = null;
-
-                            if (selectedUiGhostPositions[previousPosition].TryGetComponent<Building>(out _))
-                            {
-                                selectedUiGhostPositions[previousPosition].transform.localPosition = new Vector3((previousPosition.x * 60) + 30, (previousPosition.y * 60)+30, 0);
-                            }
-                            if (selectedUiGhostPositions[previousPosition].TryGetComponent<Unit>(out _))
-                            {
-                                selectedUiGhostPositions[previousPosition].transform.localPosition = new Vector3((previousPosition.x * 60) + 30, (previousPosition.y * 60)+15, 0);
-                            }
-                        }
-                    }
-                    previousPosition = new Vector2(x, y);
-                }
+                SpendMoney((unit.Cost / 2f) * -1f);
+                unit.die();
             }
         }
+        updateSelectedUi();
     }
     [Command]
     public void SpawnUnit(int index, Vector3 position, int team)
@@ -463,6 +562,14 @@ public class CommanderScript : NetworkBehaviour
         thing.GetComponent<Unit>().UnitIndex = index;
         NetworkServer.Spawn(thing, connectionToClient);
     }
+    [Command]
+    public void SpawnBuilding(int index, Vector3 position, int team)
+    {
+        GameObject thing = Instantiate(data.Buildings[index], position, Quaternion.identity);
+        thing.GetComponent<Building>().Team = team;
+        thing.GetComponent<Building>().BuildingIndex = index;
+        NetworkServer.Spawn(thing, connectionToClient);
+    }   
     public void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.W))

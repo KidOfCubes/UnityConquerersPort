@@ -30,6 +30,7 @@ public class Building : NetworkBehaviour
     public Building ParentBuilding;
     public HealthBarScript healthBarScript;
     GameObject selectCircle;
+    private EnergyCrystal taken;
     // Start is called before the first frame update
     public bool canBuild()
     {
@@ -97,6 +98,7 @@ public class Building : NetworkBehaviour
             if ((crystal.transform.position - transform.position).magnitude <= BuildCrystalRange&&!crystal.GetComponent<EnergyCrystal>().Taken)
             {
                 crystal.GetComponent<EnergyCrystal>().Taken = true;
+                taken = crystal.GetComponent<EnergyCrystal>();
                 return true;
             }
         }
@@ -155,7 +157,15 @@ public class Building : NetworkBehaviour
             Health = MaxHealth;
         }
         data.ActiveBuildings.Add(gameObject);
-        GameObject tempthing = Instantiate(data.HealthBarPrefab);
+        if (BuildCrystalRange != 0)
+        {
+            TakeCrystal();
+        }
+        makeHealthBar();
+    }
+    public void makeHealthBar()
+    {
+        GameObject tempthing = Instantiate(data.MiscPrefabs["HealthBar"]);
         healthBarScript = tempthing.GetComponent<HealthBarScript>();
         healthBarScript.MaxHealth = MaxHealth;
         healthBarScript.Health = Health;
@@ -173,6 +183,7 @@ public class Building : NetworkBehaviour
         }
         data.ActiveBuildings.Remove(gameObject);
         if (healthBarScript != null) { Destroy(healthBarScript.gameObject); }
+        if (taken != null) { taken.Taken = false; }
     }
     private void OnDestroy()
     {
@@ -182,6 +193,7 @@ public class Building : NetworkBehaviour
         }
         data.ActiveBuildings.Remove(gameObject);
         if (healthBarScript != null) { Destroy(healthBarScript.gameObject); }
+        if (taken != null) { taken.Taken = false; }
     }
     public bool select(int team)
     {
@@ -207,17 +219,34 @@ public class Building : NetworkBehaviour
     }
     private void OnHealthChanged(float oldValue, float newValue)
     {
-        if (Health <= 0)
+        if (data.Commander != null)
         {
-            OnDestroy();
-            OnDisable();
-            if (selected)
+            if (data.Commander.Team == Team)
             {
-                data.Commander.ClickOnObject(0, gameObject);
+                if (Health <= 0)
+                {
+                    if (selected)
+                    {
+                        data.Commander.SelectedInGui(gameObject, false);
+                        data.Commander.selected.Remove(gameObject);
+                    }
+                    Debug.Log("Bouta die");
+                    die();
+                }
             }
-            data.ActiveBuildings.Remove(gameObject);
-            Destroy(healthBarScript.gameObject);
-            Destroy(gameObject);
+            else
+            {
+
+                if (!data.ActiveCommanders.ContainsKey(Team))
+                {
+                    die();
+                }
+                Debug.Log("COMMANDER team " + data.Commander.Team + " my team " + Team);
+            }
+        }
+        else
+        {
+            Debug.Log("COMMANDER NULL");
         }
         if (healthBarScript != null)
         {
@@ -229,6 +258,15 @@ public class Building : NetworkBehaviour
         {
             Debug.Log("oh no its null");
         }
+    }
+    [Command]
+    public void die()
+    {
+        Destroy(gameObject);
+    }
+    public void Serverdie()
+    {
+        Destroy(gameObject);
     }
     // Update is called once per frame
     void Update()

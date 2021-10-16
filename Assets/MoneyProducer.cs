@@ -34,11 +34,11 @@ public class MoneyProducer : NetworkBehaviour
         if (time >= CashInterval)
         {
             time = time - CashInterval;
-            foreach(KeyValuePair<int, CommanderScript> pair in data.ActiveCommanders)
+/*            foreach(KeyValuePair<int, CommanderScript> pair in data.ActiveCommanders)
             {
                 Debug.Log("ACTIVE COMMANDERS LIST " + pair.Key+":"+pair.Value.name+" TEAM IM LOOKING FOR IS "+Team+"AND I AM "+isServer+" ON SERVER");
-            }
-            Debug.Log("THING " + gameObject.name+ " GENERATED CASH FOR " + data.ActiveCommanders[Team].name);
+            }*/
+            //Debug.Log("THING " + gameObject.name+ " GENERATED CASH FOR " + data.ActiveCommanders[Team].name);
             data.ActiveCommanders[Team].Money += CashMoney;
         }
     }

@@ -290,6 +290,9 @@
     <Reference Include="UnityEditor.OSXStandalone.Extensions">
       <HintPath>G:\Program Files\Unity\2020.3.12f1\Editor\Data\PlaybackEngines\MacStandaloneSupport\UnityEditor.OSXStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>G:\Program Files\Unity\2020.3.12f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions">
       <HintPath>G:\Program Files\Unity\2020.3.12f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.dll</HintPath>
     </Reference>

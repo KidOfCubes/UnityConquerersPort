@@ -1020,7 +1020,7 @@ MonoBehaviour:
   Health: 0
   MaxHealth: 300
   BuildingIndex: 0
-  Cost: 0
+  Cost: 130
   BuildEnemyUnitRange: 0
   BuildEnemyBuildingRange: 0
   BuildUnitRange: 2

@@ -87,20 +87,13 @@ public class buildingBuildings : NetworkBehaviour
         { 
             RemoveMoney(ghost.GetComponent<Building>().Cost);
             ghost.GetComponent<Building>().TakeCrystal();
-            SpawnBuilding(BuildingIndex,hit.point);
+            commanderScript.SpawnBuilding(BuildingIndex,hit.point,commanderScript.Team);
             placing = true;
             ToggleGhost();
         }
         
     }
-    [Command]
-    void SpawnBuilding(int index, Vector3 position)
-    {
-        GameObject thing = Instantiate(data.Buildings[index], position, Quaternion.identity);
-        thing.GetComponent<Building>().BuildingIndex = BuildingIndex;
-        thing.GetComponent<Building>().Team = commanderScript.Team;
-        NetworkServer.Spawn(thing);
-    }
+
 
     [Command]
     void RemoveMoney(float cost)

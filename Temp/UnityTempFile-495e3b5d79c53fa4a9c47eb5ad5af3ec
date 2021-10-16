@@ -1,0 +1,591 @@
+/target:library
+/out:Temp/Unity.PlasticSCM.Editor.dll
+/nowarn:0169
+/nowarn:0649
+/refout:Temp/Unity.PlasticSCM.Editor.dll.ref
+/deterministic
+/debug:portable
+/optimize+
+/nostdlib+
+/preferreduilang:en-US
+/langversion:8.0
+/reference:Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
+/reference:Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
+/reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphViewModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.PackageManagerUIModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIServiceModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsNativeModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/Microsoft.Win32.Primitives.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.AppContext.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Concurrent.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.NonGeneric.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Specialized.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Annotations.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.EventBasedAsync.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Primitives.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.TypeConverter.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Console.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Data.Common.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Contracts.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Debug.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.FileVersionInfo.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Process.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.StackTrace.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TextWriterTraceListener.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Tools.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TraceSource.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Drawing.Primitives.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Dynamic.Runtime.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Calendars.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Extensions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Compression.ZipFile.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.DriveInfo.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Primitives.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Watcher.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.IsolatedStorage.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.MemoryMappedFiles.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Pipes.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.UnmanagedMemoryStream.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Expressions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Parallel.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Queryable.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Http.Rtc.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NameResolution.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NetworkInformation.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Ping.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Primitives.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Requests.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Security.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Sockets.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebHeaderCollection.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.Client.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ObjectModel.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.ILGeneration.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.Lightweight.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Extensions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Primitives.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Reader.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.ResourceManager.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Writer.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.CompilerServices.VisualC.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Extensions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Handles.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Numerics.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Formatters.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Json.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Primitives.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Xml.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Claims.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Algorithms.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Csp.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Encoding.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Primitives.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.X509Certificates.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Principal.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.SecureString.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Duplex.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Http.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.NetTcp.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Primitives.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Security.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.Extensions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.RegularExpressions.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Overlapped.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.Parallel.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Thread.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.ThreadPool.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Timer.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ValueTuple.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.ReaderWriter.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XDocument.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlDocument.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlSerializer.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Microsoft.CSharp.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Data.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.IO.Compression.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Net.Http.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.Vectors.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll"
+/reference:"G:/Program Files/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll"
+/reference:H:/UnityProjects/Conquerers/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/unityplastic.dll
+/reference:H:/UnityProjects/Conquerers/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll
+/reference:H:/UnityProjects/Conquerers/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll
+/define:CSHARP_7_3_OR_NEWER
+/define:CSHARP_7_OR_LATER
+/define:DEBUG
+/define:ENABLE_AR
+/define:ENABLE_AUDIO
+/define:ENABLE_BURST_AOT
+/define:ENABLE_CACHING
+/define:ENABLE_CLOTH
+/define:ENABLE_CLOUD_LICENSE
+/define:ENABLE_CLOUD_SERVICES
+/define:ENABLE_CLOUD_SERVICES_ADS
+/define:ENABLE_CLOUD_SERVICES_ANALYTICS
+/define:ENABLE_CLOUD_SERVICES_BUILD
+/define:ENABLE_CLOUD_SERVICES_COLLAB
+/define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+/define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+/define:ENABLE_CLOUD_SERVICES_PURCHASING
+/define:ENABLE_CLOUD_SERVICES_UNET
+/define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+/define:ENABLE_CLUSTERINPUT
+/define:ENABLE_CLUSTER_SYNC
+/define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+/define:ENABLE_CUSTOM_RENDER_TEXTURE
+/define:ENABLE_DIRECTOR
+/define:ENABLE_DIRECTOR_AUDIO
+/define:ENABLE_DIRECTOR_TEXTURE
+/define:ENABLE_EDITOR_HUB_LICENSE
+/define:ENABLE_EVENT_QUEUE
+/define:ENABLE_LEGACY_INPUT_MANAGER
+/define:ENABLE_LOCALIZATION
+/define:ENABLE_LZMA
+/define:ENABLE_MANAGED_ANIMATION_JOBS
+/define:ENABLE_MANAGED_AUDIO_JOBS
+/define:ENABLE_MANAGED_JOBS
+/define:ENABLE_MANAGED_TRANSFORM_JOBS
+/define:ENABLE_MICROPHONE
+/define:ENABLE_MONO
+/define:ENABLE_MONO_BDWGC
+/define:ENABLE_MOVIES
+/define:ENABLE_MULTIPLE_DISPLAYS
+/define:ENABLE_NETWORK
+/define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+/define:ENABLE_PHYSICS
+/define:ENABLE_PROFILER
+/define:ENABLE_RUNTIME_GI
+/define:ENABLE_SCRIPTING_GC_WBARRIERS
+/define:ENABLE_SPRITES
+/define:ENABLE_TERRAIN
+/define:ENABLE_TEXTURE_STREAMING
+/define:ENABLE_TILEMAP
+/define:ENABLE_TIMELINE
+/define:ENABLE_UNET
+/define:ENABLE_UNITYEVENTS
+/define:ENABLE_UNITYWEBREQUEST
+/define:ENABLE_UNITY_COLLECTIONS_CHECKS
+/define:ENABLE_VIDEO
+/define:ENABLE_VIRTUALTEXTURING
+/define:ENABLE_VR
+/define:ENABLE_WEBCAM
+/define:ENABLE_WEBSOCKET_CLIENT
+/define:ENABLE_WEBSOCKET_HOST
+/define:ENABLE_WWW
+/define:GFXDEVICE_WAITFOREVENT_MESSAGEPUMP
+/define:INCLUDE_DYNAMIC_GI
+/define:MIRROR
+/define:MIRROR_17_0_OR_NEWER
+/define:MIRROR_18_0_OR_NEWER
+/define:MIRROR_24_0_OR_NEWER
+/define:MIRROR_26_0_OR_NEWER
+/define:MIRROR_27_0_OR_NEWER
+/define:MIRROR_28_0_OR_NEWER
+/define:MIRROR_29_0_OR_NEWER
+/define:MIRROR_30_0_OR_NEWER
+/define:MIRROR_30_5_2_OR_NEWER
+/define:MIRROR_32_1_2_OR_NEWER
+/define:MIRROR_32_1_4_OR_NEWER
+/define:MIRROR_35_0_OR_NEWER
+/define:MIRROR_35_1_OR_NEWER
+/define:MIRROR_37_0_OR_NEWER
+/define:MIRROR_38_0_OR_NEWER
+/define:MIRROR_39_0_OR_NEWER
+/define:MIRROR_40_0_OR_NEWER
+/define:MIRROR_41_0_OR_NEWER
+/define:MIRROR_42_0_OR_NEWER
+/define:MIRROR_43_0_OR_NEWER
+/define:MIRROR_44_0_OR_NEWER
+/define:MIRROR_46_0_OR_NEWER
+/define:NET_4_6
+/define:PLATFORM_ARCH_64
+/define:PLATFORM_STANDALONE
+/define:PLATFORM_STANDALONE_WIN
+/define:PLATFORM_SUPPORTS_MONO
+/define:PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+/define:RENDER_SOFTWARE_CURSOR
+/define:SCENE_TEMPLATE_MODULE
+/define:TRACE
+/define:UNITY_2017_1_OR_NEWER
+/define:UNITY_2017_2_OR_NEWER
+/define:UNITY_2017_3_OR_NEWER
+/define:UNITY_2017_4_OR_NEWER
+/define:UNITY_2018_1_OR_NEWER
+/define:UNITY_2018_2_OR_NEWER
+/define:UNITY_2018_3_OR_NEWER
+/define:UNITY_2018_4_OR_NEWER
+/define:UNITY_2019_1_OR_NEWER
+/define:UNITY_2019_2_OR_NEWER
+/define:UNITY_2019_3_OR_NEWER
+/define:UNITY_2019_4_OR_NEWER
+/define:UNITY_2020
+/define:UNITY_2020_1_OR_NEWER
+/define:UNITY_2020_2_OR_NEWER
+/define:UNITY_2020_3
+/define:UNITY_2020_3_12
+/define:UNITY_2020_3_OR_NEWER
+/define:UNITY_5_3_OR_NEWER
+/define:UNITY_5_4_OR_NEWER
+/define:UNITY_5_5_OR_NEWER
+/define:UNITY_5_6_OR_NEWER
+/define:UNITY_64
+/define:UNITY_ASSERTIONS
+/define:UNITY_EDITOR
+/define:UNITY_EDITOR_64
+/define:UNITY_EDITOR_WIN
+/define:UNITY_INCLUDE_TESTS
+/define:UNITY_STANDALONE
+/define:UNITY_STANDALONE_WIN
+/define:UNITY_TEAM_LICENSE
+/define:USE_SEARCH_ENGINE_API
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssemblyInfo.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetMenu\AssetMenuItems.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetMenu\AssetMenuOperations.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetMenu\AssetOperations.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetMenu\AssetsSelection.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetMenu\Dialogs\CheckinDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetMenu\Dialogs\CheckinDialogOperations.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetMenu\ProjectViewAssetSelection.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetOverlays\AssetStatus.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetOverlays\Cache\AssetStatusCache.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetOverlays\Cache\BuildPathDictionary.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetOverlays\Cache\LocalStatusCache.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetOverlays\Cache\LockStatusCache.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetOverlays\Cache\RemoteStatusCache.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetOverlays\Cache\SearchLocks.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetOverlays\DrawAssetOverlay.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetsUtils\AssetsPath.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetsUtils\LoadAsset.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetsUtils\Processor\AssetModificationProcessor.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetsUtils\Processor\AssetPostprocessor.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetsUtils\Processor\AssetsProcessor.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetsUtils\Processor\PlasticAssetsProcessor.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetsUtils\ProjectPath.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetsUtils\RefreshAsset.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AssetsUtils\SaveAssets.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\AutoRefresh.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Beta\CalculateUserBetaProgramSetting.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\CheckWorkspaceTreeNodeStatus.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\CloudProjectDownloader\AutoConfigClientConf.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\CloudProjectDownloader\CloudProjectDownloader.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\CloudProjectDownloader\CommandLineArguments.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\CloudProjectDownloader\DownloadRepositoryOperation.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\CloudProjectDownloader\ParseArguments.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\CollabPlugin.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\ChannelCertificateUiImpl.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\CloudEditionWelcomeWindow.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\CreateOrganizationPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\CreatedOrganizationPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\OrganizationPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\SSOSignUpPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\SignInPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\SignInWithEmailPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\CloudEdition\Welcome\WaitingSignInPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\ConfigurePartialWorkspace.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\CredentialsDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\CredentialsUIImpl.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\EncryptionConfigurationDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\MissingEncryptionPasswordPromptHandler.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\TeamEdition\TeamEditionConfigurationWindow.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\ToolConfig.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Configuration\WriteLogConfiguration.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\CheckinProgress.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\GenericProgress.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\IncomingChangesNotificationPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\ProgressOperationHandler.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\UpdateProgress.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\UpdateReport\UpdateReportDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\UpdateReport\UpdateReportLineListViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\UpdateReport\UpdateReportListHeaderState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Developer\UpdateReport\UpdateReportListView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\DrawGuiModeSwitcher.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\DrawIncomingChangesNotificationPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\EnumExtensions.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\FindWorkspace.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\GetRelativePath.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\CheckinProgress.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\IncomingChangesNotificationPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\ProgressOperationHandler.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\UpdateProgress.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\UpdateReport\ErrorListViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\UpdateReport\UpdateReportDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\UpdateReport\UpdateReportListHeaderState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Gluon\UpdateReport\UpdateReportListView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Help\BuildFormattedHelp.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Help\DrawHelpPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Help\HelpData.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Help\HelpFormat.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Help\HelpLink.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Help\HelpLinkData.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Help\HelpPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Help\TestingHelpData.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Inspector\DrawInspectorOperations.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Inspector\InspectorAssetSelection.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\MetaPath.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\NewIncomingChanges.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\PlasticApp.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\PlasticGUIClient.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\PlasticGUIClient_Gluon.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\PlasticMenuItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\PlasticWindow.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\SetupCloudProjectId.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\SwitchModeConfirmationDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Tool\BringWindowToFront.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Tool\FindTool.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Tool\IsExeAvailable.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Tool\LaunchInstaller.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Tool\LaunchTool.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Tool\ToolConstants.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Avatar\ApplyCircleMask.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Avatar\AvatarImages.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Avatar\GetAvatar.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\BoolSetting.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\CooldownWindowDelayer.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\DockEditorWindow.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\DrawActionButton.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\DrawActionHelpBox.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\DrawSearchField.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\DrawSplitter.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\DropDownTextField.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\EditorDispatcher.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\EditorProgressBar.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\EditorProgressControls.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\EditorVersion.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\EditorWindowFocus.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\EnumPopupSetting.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\FindEditorWindow.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\GUIActionRunner.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\GUISpace.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\GetPlasticShortcut.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\GuiEnabled.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\HandleMenuItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Images.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\MeasureMaxWidth.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Message\DrawDialogIcon.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Message\PlasticQuestionAlert.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\PlasticDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\PlasticSplitterGUILayout.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Progress\DrawProgressForDialogs.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Progress\DrawProgressForOperations.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Progress\DrawProgressForViews.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Progress\OperationProgressData.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Progress\ProgressControlsForDialogs.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Progress\ProgressControlsForViews.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\ResponseType.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\RunModal.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\ShowWindow.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\SortOrderComparer.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\TabButton.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Tree\DrawTreeViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Tree\GetChangesOverlayIcon.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Tree\ListViewItemIds.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Tree\TableViewOperations.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Tree\TreeHeaderColumns.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Tree\TreeHeaderSettings.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\Tree\TreeViewItemIds.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UIElements\LoadingSpinner.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UIElements\TabView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UIElements\UIElementsExtensions.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityConstants.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityEvents.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityMenuItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityPlasticGuiMessage.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityPlasticTimer.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityStyles.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UI\UnityThreadWaiter.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\UnityConfigurationChecker.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\VCSPlugin.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\ViewSwitcher.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Changesets\ChangesetListViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Changesets\ChangesetsListHeaderState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Changesets\ChangesetsListView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Changesets\ChangesetsSelection.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Changesets\ChangesetsTab.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Changesets\ChangesetsViewMenu.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Changesets\DateFilter.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Changesets\LaunchDiffOperations.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\CreateWorkspace\CreateWorkspaceView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\CreateWorkspace\CreateWorkspaceViewState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\CreateWorkspace\Dialogs\CreateRepositoryDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\CreateWorkspace\Dialogs\RepositoriesListHeaderState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\CreateWorkspace\Dialogs\RepositoriesListView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\CreateWorkspace\Dialogs\RepositoryExplorerDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\CreateWorkspace\Dialogs\RepositoryListViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\CreateWorkspace\DrawCreateWorkspaceView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\CreateWorkspace\ValidRepositoryName.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\ChangeCategoryTreeViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\ClientDiffTreeViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\Dialogs\GetRestorePathDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\DiffPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\DiffSelection.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\DiffTreeView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\DiffTreeViewMenu.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\GetClientDiffInfos.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\MergeCategoryTreeViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Diff\UnityDiffTree.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\FileSystemOperation.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\History\HistoryListHeaderState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\History\HistoryListView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\History\HistoryListViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\History\HistoryListViewMenu.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\History\HistorySelection.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\History\HistoryTab.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\History\SaveAction.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\ChangeCategoryTreeViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\ChangeTreeViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\DirectoryConflicts\ConflictResolutionState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\DirectoryConflicts\DrawDirectoryResolutionPanel.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\IncomingChangesSelection.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\IncomingChangesTab.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\IncomingChangesTreeHeaderState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\IncomingChangesTreeView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\IncomingChangesViewMenu.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\IsCurrent.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\IsResolved.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Developer\UnityIncomingChangesTree.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\ChangeCategoryTreeViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\ChangeTreeViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\Errors\ErrorListViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\Errors\ErrorsListHeaderState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\Errors\ErrorsListView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\IncomingChangesSelection.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\IncomingChangesTab.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\IncomingChangesTreeHeaderState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\IncomingChangesTreeView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\IncomingChangesViewMenu.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\Gluon\UnityIncomingChangesTree.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\IncomingChanges\IIncomingChangesTab.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\LaunchOperation.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\ChangeCategoryTreeViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\ChangeTreeViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\CheckinConflictsDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\CheckinMergeNeededDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\DependenciesDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\FilterRulesConfirmationDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\LaunchCheckinConflictsDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\LaunchDependenciesDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\Dialogs\PendingChangesOptionsDialog.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\DrawCommentTextArea.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\FilesFilterPatternsMenuBuilder.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\PendingChangesMultiColumnHeader.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\PendingChangesSelection.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\PendingChangesTab.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\PendingChangesTreeHeaderState.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\PendingChangesTreeView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\PendingChangesViewMenu.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\PendingMergeLinks\MergeLinkListViewItem.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\PendingMergeLinks\MergeLinksListView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\PendingChanges\UnityPendingChangesTree.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Welcome\ConfigurePlasticOperation.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Welcome\DownloadAndInstallOperation.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Welcome\GetInstallerTmpFileName.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Welcome\MacOSConfigWorkaround.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\Views\Welcome\WelcomeView.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\WebApi\CredentialsResponse.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\WebApi\PlasticScmRestApiClient.cs
+H:\UnityProjects\Conquerers\Library\PackageCache\com.unity.collab-proxy@1.5.7\Editor\PlasticSCM\WebApi\UnityPackageBetaEnrollResponse.cs

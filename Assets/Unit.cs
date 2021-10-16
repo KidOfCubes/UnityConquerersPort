@@ -85,7 +85,11 @@ public class Unit : NetworkBehaviour
             Health = MaxHealth;
         }
         data.ActiveUnits.Add(gameObject);
-        GameObject tempthing = Instantiate(data.HealthBarPrefab);
+        makeHealthBar();
+    }
+    public void makeHealthBar()
+    {
+        GameObject tempthing = Instantiate(data.MiscPrefabs["HealthBar"]);
         healthBarScript = tempthing.GetComponent<HealthBarScript>();
         healthBarScript.MaxHealth = MaxHealth;
         healthBarScript.Health = Health;
@@ -97,6 +101,7 @@ public class Unit : NetworkBehaviour
     }
     private void OnDisable()
     {
+        Debug.Log("GETTING DISABLED " + gameObject.name);
         if (isServer)
         {
             data.ActiveUnits.Remove(gameObject);
@@ -107,6 +112,7 @@ public class Unit : NetworkBehaviour
     }
     private void OnDestroy()
     {
+        Debug.Log("GETTING DESTROYED " + gameObject.name);
         if (isServer)
         {
             data.ActiveUnits.Remove(gameObject);
@@ -126,16 +132,32 @@ public class Unit : NetworkBehaviour
     }
     private void OnHealthChanged(float oldValue, float newValue)
     {
-        if (Health <= 0)
+        if (data.Commander != null)
         {
-            OnDisable();
-            if (selected)
+            if (data.Commander.Team == Team)
             {
-                Debug.Log("REMOVED FROM SELECTED");
-                data.Commander.SelectedInGui(gameObject, false);
-                data.Commander.selected.Remove(gameObject);
+                if (Health <= 0)
+                {
+                    if (selected)
+                    {
+                        Debug.Log("REMOVED FROM SELECTED");
+                        data.Commander.SelectedInGui(gameObject, false);
+                        data.Commander.selected.Remove(gameObject);
+                    }
+                    //OnDisable();
+                    die();
+
+
+                }
             }
-            Destroy(gameObject);
+            else
+            {
+                Debug.Log("COMMANDER team " + data.Commander.Team + " my team " + Team);
+            }
+        }
+        else
+        {
+            Debug.Log("COMMANDER NULL");
         }
         if (healthBarScript != null)
         {
@@ -147,6 +169,11 @@ public class Unit : NetworkBehaviour
         {
             Debug.Log("oh no its null");
         }
+    }
+    [Command]
+    public void die()
+    {
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
@@ -165,6 +192,7 @@ public class Unit : NetworkBehaviour
             {
                 Destroy(selectCircle);
             }
+            Debug.Log("I AM NOW " + selected + "ed");
             return selected;
         }
         else
@@ -214,7 +242,7 @@ public class Unit : NetworkBehaviour
             }
             if (Team == data.Commander.Team)
             {
-                if (targetLine == null) targetLine = Instantiate(data.TargetLine);
+                if (targetLine == null) targetLine = Instantiate(data.MiscPrefabs["TargetLine"]);
                 targetLine.transform.position = new Vector3((target.x + transform.position.x) / 2, (target.y + transform.position.y) / 2, (target.z + transform.position.z) / 2);
                 targetLine.transform.localScale = new Vector3(0.1f, 0.1f, Vector3.Distance(transform.position, target));
                 targetLine.transform.LookAt(target);
